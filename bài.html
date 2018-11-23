@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var adam = true;
+    var Apple = function (nangluong = 10) {
+        this.nangluong = nangluong;
+        this.info = function () {
+            return this.nangluong;
+        };
+        this.giamnangluong = function () {
+            if (this.nangluong > 0) {
+                this.nangluong--;
+                if (this.nangluong === 0) {
+                    console.log('mua them di');
+                    document.write("Mua thêm táo đi!" +  "<br>");
+                }
+            }
+        };
+    };
+    var human = function (nangluong,gioitinh) {
+        this.nangluong = nangluong;
+        this.gioitinh = gioitinh;
+        this.checkApple = function () {
+            return this.apple.nangluong;
+        };
+        this.say = function () {
+            console.log(apple.nangluong);
+            console.log('adam' + adam);
+            if (apple.nangluong > 0 ) {
+                if (this.gioitinh === "nam") {
+                    document.write("Em an mot mieng di " + "<br>");
+                    apple.giamnangluong();
+                    adam = false;
+                    console.log(apple.nangluong);
+                }else{
+                    document.write("Anh an mot mieng di " + "<br>");
+                    apple.giamnangluong();
+                    adam = true;
+                    console.log(apple.nangluong);
+                }
+            }else{
+                console.log('tsssss');
+                document.write("Het tao roi mua them đi");
+            }
+        }
+    };
+    var aadam = new human(80, "nam");
+    var eva = new human(50, "nu");
+    var apple = new Apple(12);
+    do{
+        (adam) ? aadam.say() : eva.say();
+    }while (apple.nangluong>0)
+
+</script>
+</body>
+</html>
